@@ -26,6 +26,7 @@ print("\t\t1.",a,"<",b,"or",a,"==",b,(a<b or a==b))
 print("\t\t2.",a,">",b,"or",a,"==",b,(a>b or a==b))
 print("\t\t3.",a,"==",b,"or",a,">",b,(a==b or a>b))
 print("\t\t4.",a,">",b,"or",a,"!=",b,(a>b or a!=b))
+print()
 
 a=int(input("Enter the value of a: "))
 b=int(input("Enter the value of b: "))
