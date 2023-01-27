@@ -1,0 +1,265 @@
+--------------------------------DJANGO---------------------------------------
+Django is python based web Framework.(Back-end FrameWork server side) used to 
+build web application(website).It used MVT design Pattern.
+web Framework is a collection of modules, packages and libraries used to speed up 
+the web development. MVT(Model View Template) 1.Model-Data access layer(DB)
+2.views -business logic 3.Template -presentation layer(UI)
+1.urls(www.google.com) ->views[Request] |
+models(data)->view(process)->template(page) [response] |
+
+--------------------------------------------------------------------------------
+1.Setup Django
+1. cmt -open command prompt | >cd desktop | 
+2. >pip install virtualenv  -to install virtual environment| >virtualenv env_name
+-to create a virtual environment with env_name as folder_name in the file path.
+>env_name\scripts\activate -to activate virtual_env.(env_name)file_path>
+>env_name\scripts\deactivate -to deactivate virtula_env.file_path>
+3. >pip install django -to install django | >django-admin -list of commands
+>django-admin startproject project_name -to create project of project_name folder
+move the virtual_env folder to project folder | open vs code as project folder.
+4. >cd project_name -to change the dir | >python manage.py runserver -to run 
+development server. (http://127.0.0.1:8000/)
+5. >python manage.py startapp app_name | create a app_name folder | add the app
+in project/settings.py/ installed app = 'app_name.apps.App_nameConfig' Ref->3.1
+ 
+
+
+
+
+ 
+--------------------------------------------------------------------------------
+2.Project_Folder
+--manage.py -it is used to excute django commands| 
+--db.sqlite3 -default database file|we can also use mysql or other databases
+--project_name_folder :wsgi.py (web sever gateway interface) -actual server
+--urls.py -to add list of urls of our website.
+--settings.py -it main file (core project configuration)
+--asgi.py -(asychronse gateway interface)
+Virtual_environment(env_name)
+--lib -list of libaries,
+--scripts -activate,deactivate,files  |--pyvenm.py --
+
+---------------------------------------------------------------------------------
+3.App_Folder
+--views.py -business logic(quering data, templates to be render) |it called when 
+the urls is clicked
+--models.py -configure database
+--apps.py -core app config
+--admin.py -admin panel
+--tests.py -to test
+3.1__to_add_in_app_folder__
+add urls.py file inside app folder | 
+in views.py >def fun(request): return render(request,'*.html',context)
+in urls.py >import . from views urlpatterns=[path('',views.home,name="ref_name"),]
+,('login/<data_type:variable_name>/',function,context),
+in urls.py project folder >from django.urls import include
+urlpatterns=[path('',include('app_name.urls'))]
+
+
+--------------------------------------------------------------------------------
+4.Templates:
+1.create a templates folder in base_dir and add html files inside the templates
+folder | 2.add DIRS= [ BASE_DIS / 'templates'] | 3.If add specific html to app 
+only. then add templates folder and add app_name folder inside the templates
+and add html files inside the folder render(request,'app_name/*.html').
+__templates_inheritance__
+{% include '*.html' %}  - include or import a html document to our document.
+{% extends '*.html '%}  - to import only the include elements from html doc.
+{% block content %} main content {% endblock %} - the main content differs from
+the include block.
+
+{{ variable_name }} -to use variable_name
+
+{% for i in users %} <p>{{i.id}}</p> {{ endfor }} 
+{% if condi %} <p></p> {{ endif }}
+
+{% url 'url_name' value %}
+
+-------------------------------------------------------------------------------
+Additional
+1.cmt (command prompt) - widows
+>cd desktop |cd dir_name |to change directory || 
+>cls |To ClearScreen |
+
+
+
+Django
+
+pip install django
+python -m django --version
+mkdir name
+cd name
+
+1.django-admin startproject <pro_name>
+dir
+2.python manage.py startapp <app_name>
+to create app inside project
+
+-----------------
+(1)Steps
+1.create project and inside project create app
+2.app_name.urls-add path [-m F django.urls I path,F . I views]
+urlpatterns = [path('',views.fun_name,name="fun_name")]
+3.views add fun res [-m F django.http I HttpResponse]
+def fun_name(request):
+	return HttpResponse('res')
+4.project.urls -add urls to project [-m F django.urls I include]
+path('',include('app_name.urls')),
+5.cd project_name | python manage.py runserver | 
+
+----------------------------------------------------------------------------
+(2)Dynamic Template Language [DTL]
+1.create <templates> folder inside app folder
+and inside <templates> folder create folder named <app_name>
+2.add 'app_name', inside settings.py installed apps
+3.views.py  inside add render(re,'app_name/html_name.html',{"key":"values"})
+------------------------------------------------------------------------------
+{%%} --
+
+------------------------------------------------------------------
+(4)adding two number
+create html page which has 
+form(action="name",method="post")[label,button,input(text,name)]
+method="get"--to show data in address bar|post--to not show data
+adding to app_name.urls(action,v.fun,n="")
+def fun (request):request.GET['name'] or request.POST['name']
+return render(req,app_name/file.html) using dynamic {{}}
+------------------------------------------------------------------
+(5)
+
+---------------------------------------------------------------------------------
+_________________DATA ANALYIST_______________________________________________
+E-extract T-transfer L-load
+-----PANDAS----
+1.-------Introduction---------------
+pip install pandas
+import pandas as pd
+DataStructure
+1.DataFrame({col:rows,records})
+df=pd.DataFrame({col:rows})
+2.Series([records],name='col_name')
+s=pd.Series([1,2,3],name='no')
+
+df.info()
+df.describe()
+df.dtypes
+df.shape
+
+2.--------read_,to_-----------
+to_read_df
+df=pd.read_csv('path_of_file')  ,index_col=col_name;Time_parse_dates=True;
+delimiter=',';
+df=pd.read_excel('path',sheet_name='sheet_name')(optional)
+pd.read_*(csv,excel,json,sql,parquet,ect..)
+export_df_to
+df.to_excel('path',sheet_name='sheet',index=False)
+df.to_*(csv,excel,numpy,json,sql,parquet,ect..)
+
+____print_________
+print(df)- all df
+print(df.head(no)) - top no
+print(df.tail(no)) - least no
+print(df.columns) - to print all columns name
+print(df[col_name]) - to print all records in that column
+print(df[col_name][0:10]) - to print records in specific range
+print(df[[col_name,col_name,..]] - to print all records in multiple column
+
+3.--------filter-----------------
+df[[df['col_name']==condi]]  
+df[(df['col']>condi)&(df['col']<condi)]  -only that satisfy condition
+df[df['col_name'].isin([val,val])] -is in isin(list)
+df[df['col_name'].notna()]  -notNA (records_not_having_null_values)
+df.loc[df['col_name']==condi,col_name,col_name] -col_name the satisfy condi
+df.loc[df['col_name']==condi] -all set that satisfy condi
+df.iloc[row_index:col_index] -values column_start_from_0)(row_start_0_not_inc_col)
+4.------updating------------------
+_____create_new_col________
+df['new_col']=df['col_name']*0.1
+df['new_col']=df['col_name']-df['col_name']
+______rename_column____________
+df_rename=df.rename(columns={'old_col':'new_col_name','':''})
+df_rename=df.rename(columns=str.lower())
+______sort_column_______________
+df.sort_values(by='col_name')
+df.sort_values(by=['col_name','col_name'],ascending=False)
+df.sort_index() - sort by index
+
+-------FUNCTION--------------
+______agg______
+df['age'].min()
+df['age'].max()
+df['age'].count()
+df['age'].value_counts()  -groupby('age').count()
+df['age'].mean()
+df['age'].median()
+df.agg({'col_name':['agg','min','max'],'col':[agg]})
+df[age].describe()
+df.groupby('sex')['Age'].mean()
+
+____pivot_____
+df.pivot(columns='col_name',values='records',index='ind_col_name',
+aggfunc='mean',)
+
+--------------------------------------------------------------------------------
+----STATISTICS----
+___Intro__
+(1.Data collection 2.Classification 3.Organizing 4.Visualizing 5.summarizing
+6.Analyzing 7.Interpreting 8.Inferencing 9.Decision making)
+--Population - Sample----
+population the overall data needed for that problem (population parameter-m,v,sd)
+sample is subset of population (sample statistics -m,v,sd)
+__2Type_of_statistics___
+1.Descreptive statistics -(col_data,clasif,organi,summ,visual)
+2.Inferential statistics  -(ana,interpretation,decision making)
+
+2.____DataTypes____
+1.Nominal -(that we can't order without cretiria ) eg:movie_names,colour_name
+2.Ordinal -(that we can order itself ) eg:movie_review,school_rank or grade
+3.Interval scale -(lies between two intervals) eg:profit and loss range,temp rang
+4.Ratio Scale -(that data can't go beyond 0 ) eg:money,sales_product
+5.Observational -(data can't control it genarate) eg:stock,temperature
+6.Experimental -(we can control the impact) eg:no_product_to_manufacture
+7.Descrite - (data can only be in whole values) eg:no_of_student
+8.Continous - (data can express in fraction or decimal) eg:height_of_students
+
+3.___basic_statistics___
+
+--------------------------------------------------------------------------------
+DATA engginering
+premises
+scale up / scale down
+database, datalake, data warehouse, oltp, olap.
+
+data are raw facts that have not been processed to explain their meaning
+
+data is the collection of facts,
+sql is language used to retrive data from the database.
+
+1.structured data
+2.semi-structured data
+3.unstructured data
+
+database: it is used to capture and record/store data through oltp(online 
+transection processing.) data stored in table fromate.
+
+datawarehouse : it is used for analytically processing OLAP(online analytical 
+processing.) data is summarized.
+
+data lake : it is used to capture any type of data(structured, semi-structured,
+unstructured.)made for large amout of data.
+
+OLAP : it is used to analyize the data in faster way and large amount of data.
+
+OLTP : it is used to record the online transactions form multiple user.
+
+structured data : stored in tabular format, clearly defined. eg: data stored in
+rdbms used to store, retrive data.
+
+unstructured data: no pre-defined structure, data is irregular, easy to extract,
+No data model.
+
+semi - structured data: is combined of both structured and unstructured data
+eg: emails  - sender,receiver,data - structured data | content of emails -text,
+num,image is unstructured data.
+
+  
