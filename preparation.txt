@@ -1,0 +1,59 @@
+
+------------------------------------------------------------------------------
+1.Interview
+--Resume
+*top_left,order,highlight,noise,keywords
+--Appling -A week 100 at least. | easy apply  and normal apply |college -alumini
+
+--------------------------------------------------------------------------------
+1.Website Development
+--1.Html,Css,JS| (react| angular js|  | )
+--2.mysql,mongo db
+--3.Node js,express| java-springboot |python-django |php
+
+--------------------------------------------------------------------------------
+2.Software development Enggineer (SDE)
+--Programming Language [code_academy,hacker-rank,offical_doc] | [python,java]
+--DSA [Interview_bits,Leetcode,abdul bari,cormen][ps,pro,ca,]
+--LLD [refactoring-guru] [oops based]
+--HLD [Cracking the system design interview, Designing Data intensive app,
+netflix,google enggineer]
+--CS Fundamentals [DBMS,OS,Networking,Compilers,Distributed Systems]
+
+---DSA_Prep
+L-1[program lang,ds], L-2[LeetCode,submit when corr,good prob,consitent,comp pro]
+L-3Revision[Notes,prac in doc,],practice
+
+---Interview_preperation---
+1.Don't try to impress interviewer and don't fear them.treat them like your friend
+2.Don't rush to answer . take 2-10s before answering all the question.
+3.Start Communication once your confident. communicate your thoughts.
+
+------------------------------------------------------------------------------
+3.Data_Related
+---1.ROLES----
+--Data Analytics,Business Analytics,Product Analytics,Risk Analytics [Skills- SQL,
+ Excel,tablue,python(intermediate) | R.
+--Data Science,Mechine Learning Enggineer,Artificial Intelligence [Skills - DSA,
+Python[professional],Maths,Business Skill.
+--Data Enggineer,Mechine Learning operator,Big Data enggineer [Skills - cloud,ml,
+os].
+
+---2.Interview preparation for Data_Science.
+DSA(easy-medium),DS/ML-->(theroy,practical),Case Study -->(business),Guesstimate.
+
+--------------------------------------------------------------------------------
+ADDITIONAL
+--International Apply-Abrod
+1.Transfer(mnc) [Preformance,Soft_Skills(com,emotion)]
+2.Direct Applications [Work-Experence,competion Awards,academy marks]
+3.freelance [portfolio]
+
+techcrunch
+
+competative programming.
+
+interview bit dsa map.
+
+1.diff logic.
+2.don't rush be paitent.
